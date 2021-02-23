@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <script>
+        function vergroot() {
+
+            let breedte = document.getElementById('foto').width;
+
+            document.getElementById('foto').width = (breedte * 2);
+        }
+
+        function verklein() {
+            let breedte = document.getElementById('foto').width;
+            document.getElementById('foto').width = (breedte / 2) + 1; //ga nooit minder dan null, dus het kan altijd terug vergroot.
+
+
+        }
+
+        function toon(bron) {
+            document.getElementById("resultaat").innerHTML = bron;
+        }
+
+    </script>
+</head>
+
+<body>
+    <img id="foto" src="sofa.png" width="150" onclick="toon(this.src)"/>
+       <p id="resultaat"></p>
+        <br />
+        <input type="button" value="vergroot" onclick="vergroot()" />
+        <input type="button" value="verklein" onclick="verklein()" />
+</body>
